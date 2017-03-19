@@ -5,12 +5,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
- * Created by senghuot on 3/16/17.
+ * This is a Registration Server, accepting clients such as UsersServer and WebServer.
  */
 @SpringBootApplication
 @EnableEurekaServer
 public class RegistrationServer {
+
+    /**
+     * Run the Registration Server
+     * @param args
+     */
     public static void main(String[] args) {
+        // Hooking up the properties to registration-server.yml
         System.setProperty("spring.config.name", "registration-server");
         SpringApplication.run(RegistrationServer.class, args);
     }

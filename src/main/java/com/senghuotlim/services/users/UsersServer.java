@@ -9,7 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Import;
 
 /**
- * Created by senghuot on 3/16/17.
+ * UsersServer is a microservice, it will register itself to Discovery Server (Eureka).
  */
 @EnableAutoConfiguration
 @EnableDiscoveryClient
@@ -19,7 +19,12 @@ public class UsersServer {
     @Autowired
     protected UserRepository userRepository;
 
+    /**
+     * Run the User Server
+     * @param args
+     */
     public static void main(String[] args) {
+        // Hooking up the properties to users-server.yml
         System.setProperty("spring.config.name", "users-server");
         SpringApplication.run(UsersServer.class, args);
     }

@@ -1,12 +1,16 @@
 package com.senghuotlim.users;
 
+import org.socialsignin.spring.data.dynamodb.repository.EnableScan;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
 /**
- * Created by senghuot on 3/16/17.
+ * Repository for User data implemented using Spring Data.
  */
+@EnableScan
 public interface UserRepository extends CrudRepository<User, String> {
-    List<User> findByLastName(String lastName);
+    List<User> findByLastname(String lastname);
+
+    List<User> findAll();
 }

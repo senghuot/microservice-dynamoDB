@@ -7,12 +7,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
- * Created by senghuot on 3/17/17.
+ * A RESTFul controller to access User information stores on AWS DynamoDB
  */
 @RestController
 public class UsersController {
+
+    protected Logger logger = Logger.getLogger(UsersController.class.getName());
 
     protected UserRepository userRepository;
 
@@ -21,13 +24,22 @@ public class UsersController {
         this.userRepository = userRepository;
     }
 
-    @RequestMapping("/users/{lastanme}")
-    public List<User> findByLastname(@PathVariable("lastname") String lastname) {
-        List<User> users = userRepository.findByLastName(lastname);
+    @RequestMapping("/users/lastname/{lastname}")
+    public List<User> byLastname(@PathVariable("lastname") String lastname) {
+        logger.info("Calling to byLastname() " + lastname);
+        List<User> users = userRepository.findByLastname(lastname);
 
         if (users == null || users.isEmpty())
             throw new UserNotFoundException(lastname);
 
         return users;
+    }
+
+    @RequestMapping(value = "/users")
+    public List<User> getAll() {
+        List<User> allUsers = userRepository.findAll();
+        logger.info("information dump: " + allUsers.size());
+
+        return allUsers;
     }
 }

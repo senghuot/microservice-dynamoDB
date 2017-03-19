@@ -6,16 +6,21 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 /**
- * Created by senghuot on 3/16/17.
+ * An entity DynamoDB define to match the table define on AWS DynamoDB
  */
 @DynamoDBTable(tableName = "User")
 public class User {
 
     private String id;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
 
-    public User() {
+    public User() {}
+
+    public User(String id, String firstname, String lastname) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 
     @DynamoDBHashKey
@@ -25,25 +30,25 @@ public class User {
     }
 
     @DynamoDBAttribute
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
     @DynamoDBAttribute
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     @Override
@@ -59,5 +64,10 @@ public class User {
     @Override
     public int hashCode() {
         return id.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return id + " " + firstname + " " + lastname;
     }
 }
