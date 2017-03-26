@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/senghuot/microservice-dynamoDB.svg?branch=master)](https://travis-ci.org/senghuot/microservice-dynamoDB) 
+[![Build Status](https://travis-ci.org/senghuot/microservice-dynamoDB.svg?branch=master)](https://travis-ci.org/senghuot/microservice-dynamoDB) [![codecov](https://codecov.io/gh/senghuot/microservice-dynamoDB/branch/master/graph/badge.svg)](https://codecov.io/gh/senghuot/microservice-dynamoDB) 
 
 # Microservices with Netflix OSS & DynamoDB
 
