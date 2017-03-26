@@ -14,6 +14,7 @@ In order to access your DynamoDB, you need to setup a credential thru Amazon IAM
 
 ![Properties](https://cdn-images-1.medium.com/max/800/1*QVnpjFeAbqDQWq3WwHg4Sg.jpeg)
 
+## Run the Demo
 Awesome, you have the ingredients to build the package. Thru command line, navigate to the project folder then type:
 ```
 mvn package \\ to validate and compile the project
