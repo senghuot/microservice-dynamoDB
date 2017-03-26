@@ -1,0 +1,23 @@
+spring:
+  application:
+     name: users-service
+
+
+server:
+  port: 5555
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+
+
+amazon:
+  dynamodb:
+    endpoint: endpoint
+  aws:
+    accesskey: accesskey
+    secretkey: secretkey
