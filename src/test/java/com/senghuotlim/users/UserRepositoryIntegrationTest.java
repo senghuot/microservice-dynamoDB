@@ -28,9 +28,9 @@ import java.util.logging.Logger;
 )
 // TODO: replace endpoint, accesskey, secretkey with actual real values
 @TestPropertySource(properties = {
-        "amazon.dynamodb.endpoint=endpoint",
-        "amazon.aws.accesskey=accesskey",
-        "amazon.aws.secretkey=secretkey",
+        "amazon.dynamodb.endpoint=http://dynamodb.us-west-2.amazonaws.com",
+        "amazon.aws.accesskey=AKIAIZXZNTNYDOIEDKKQ",
+        "amazon.aws.secretkey=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",
         "eureka.client.enabled=false"
 })
 public class UserRepositoryIntegrationTest {
@@ -56,7 +56,7 @@ public class UserRepositoryIntegrationTest {
      * @throws Exception if the User table is already existed
      */
     @Before
-    @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
+    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void setup() throws Exception {
         logger = Logger.getLogger(UsersController.class.getName());
 
@@ -80,7 +80,7 @@ public class UserRepositoryIntegrationTest {
      * Reload the data back to User table after testing
      */
     @After
-    @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
+    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void reinsertExistingUsers() {
         if (existingUsers == null || existingUsers.isEmpty())
             return;
@@ -92,7 +92,7 @@ public class UserRepositoryIntegrationTest {
      * Positive test for find users by lastname
      */
     @Test
-    @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
+    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void positivefindByLastname() {
         final String id = "TEST_ID";
         final String firstname = "TEST_FIRSTNAME";
@@ -113,7 +113,7 @@ public class UserRepositoryIntegrationTest {
      * Negative test for find users by lastname
      */
     @Test
-    @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
+    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void negativefindByLastname() {
         final String lastname = "TEST_LASTNAME";
 
@@ -126,7 +126,7 @@ public class UserRepositoryIntegrationTest {
      * General test for find all users
      */
     @Test
-    @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
+    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void getAllUsers() {
         final String id = "TEST_ID";
         final String firstname = "TEST_FIRSTNAME";
