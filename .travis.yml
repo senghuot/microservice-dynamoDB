@@ -7,11 +7,5 @@ language:
 jdk:
   - oraclejdk8
 
-before_script:
-  - pip install --user codecov
-
 script:
   - mvn integration-test
-
-after_success:
-  - codecov
