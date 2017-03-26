@@ -15,7 +15,9 @@ before_script:
   - pip install --user codecov
 
 script:
+  - mvn cobertura:cobertura
   - mvn integration-test
 
 after_success:
   - codecov
+  - bash <(curl -s https://codecov.io/bash)
