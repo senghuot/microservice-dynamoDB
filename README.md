@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/senghuot/microservice-dynamoDB.svg?branch=master)](https://travis-ci.org/senghuot/microservice-dynamoDB) 
+
 # Microservices with Netflix OSS & DynamoDB
 
 ![System Architecture](https://cdn-images-1.medium.com/max/1000/1*FwAMM5U-JOh2bMdchTKo3Q.jpeg)
