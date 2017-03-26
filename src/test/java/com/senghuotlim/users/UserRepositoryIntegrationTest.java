@@ -64,7 +64,7 @@ public class UserRepositoryIntegrationTest {
 
         CreateTableRequest tableRequest = dynamoDBMapper.generateCreateTableRequest(User.class);
 
-        tableRequest.setProvisionedThroughput(new ProvisionedThroughput(1L, 1L));
+        tableRequest.setProvisionedThroughput(new ProvisionedThroughput(1L, 1L));//
 
         try {
             amazonDynamoDB.createTable(tableRequest);
@@ -80,7 +80,7 @@ public class UserRepositoryIntegrationTest {
      * Reload the data back to User table after testing
      */
     @After
-    @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
+    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void reinsertExistingUsers() {
         if (existingUsers == null || existingUsers.isEmpty())
             return;
@@ -92,7 +92,7 @@ public class UserRepositoryIntegrationTest {
      * Positive test for find users by lastname
      */
     @Test
-    @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
+    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void positivefindByLastname() {
         final String id = "TEST_ID";
         final String firstname = "TEST_FIRSTNAME";
