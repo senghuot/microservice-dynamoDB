@@ -29,8 +29,8 @@ import java.util.logging.Logger;
 // TODO: replace endpoint, accesskey, secretkey with actual real values
 @TestPropertySource(properties = {
         "amazon.dynamodb.endpoint=http://dynamodb.us-west-2.amazonaws.com",
-        "amazon.aws.accesskey=AKIAIZXZNTNYDOIEDKKQ",
-        "amazon.aws.secretkey=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",
+        "amazon.aws.accesskey=AKIAJJ3MBP4V62L73TIQ",
+        "amazon.aws.secretkey=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",
         "eureka.client.enabled=false"
 })
 public class UserRepositoryIntegrationTest {
@@ -62,7 +62,7 @@ public class UserRepositoryIntegrationTest {
 
         dynamoDBMapper = new DynamoDBMapper(amazonDynamoDB);
 
-        CreateTableRequest tableRequest = dynamoDBMapper.generateCreateTableRequest(User.class);
+        CreateTableRequest tableRequest = dynamoDBMapper.generateCreateTableRequest(UserTest.class);
 
         tableRequest.setProvisionedThroughput(new ProvisionedThroughput(1L, 1L));//
 
@@ -92,7 +92,6 @@ public class UserRepositoryIntegrationTest {
      * Positive test for find users by lastname
      */
     @Test
-    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void positivefindByLastname() {
         final String id = "TEST_ID";
         final String firstname = "TEST_FIRSTNAME";
@@ -113,7 +112,6 @@ public class UserRepositoryIntegrationTest {
      * Negative test for find users by lastname
      */
     @Test
-    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void negativefindByLastname() {
         final String lastname = "TEST_LASTNAME";
 
@@ -126,7 +124,6 @@ public class UserRepositoryIntegrationTest {
      * General test for find all users
      */
     @Test
-    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void getAllUsers() {
         final String id = "TEST_ID";
         final String firstname = "TEST_FIRSTNAME";
