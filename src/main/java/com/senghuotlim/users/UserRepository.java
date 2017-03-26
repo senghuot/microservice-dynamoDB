@@ -1,6 +1,7 @@
 package com.senghuotlim.users;
 
 import org.socialsignin.spring.data.dynamodb.repository.EnableScan;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

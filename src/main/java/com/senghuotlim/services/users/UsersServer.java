@@ -5,12 +5,14 @@ import com.senghuotlim.users.UsersConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Import;
 
 /**
  * UsersServer is a microservice, it will register itself to Discovery Server (Eureka).
  */
+@SpringBootApplication
 @EnableAutoConfiguration
 @EnableDiscoveryClient
 @Import(UsersConfiguration.class)

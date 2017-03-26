@@ -30,7 +30,7 @@ public class WebServer {
     /**
      * A customized RestTemplate that has the ribbon load balancer build in.
      *
-     * @return
+     * @return User Rest Template
      */
     @LoadBalanced
     @Bean
@@ -52,7 +52,7 @@ public class WebServer {
      * Defines the controller to accept the traffic and uses WebUsersService to interact
      * with the Users clusters.
      *
-     * @return
+     * @return User Controller
      */
     @Bean
     public WebUsersController usersController() {return new WebUsersController((usersService()));}

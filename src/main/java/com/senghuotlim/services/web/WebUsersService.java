@@ -21,7 +21,6 @@ public class WebUsersService {
 
     protected String serviceUrl;
 
-
     public WebUsersService(String serviceUrl) {
         this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl
                 : "http://" + serviceUrl;
