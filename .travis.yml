@@ -11,11 +11,9 @@ install:
   - mvn -N io.takari:maven:wrapper
   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
-before_script:
-  - pip install --user codecov
-
 script:
+  - mvn cobertura:cobertura
   - mvn integration-test
 
 after_success:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)
