@@ -56,7 +56,7 @@ public class UserRepositoryIntegrationTest {
      * @throws Exception if the User table is already existed
      */
     @Before
-    // @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
+    @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void setup() throws Exception {
         logger = Logger.getLogger(UsersController.class.getName());
 
@@ -64,7 +64,7 @@ public class UserRepositoryIntegrationTest {
 
         CreateTableRequest tableRequest = dynamoDBMapper.generateCreateTableRequest(User.class);
 
-        tableRequest.setProvisionedThroughput(new ProvisionedThroughput(1L, 1L));
+        tableRequest.setProvisionedThroughput(new ProvisionedThroughput(1L, 1L));//
 
         try {
             amazonDynamoDB.createTable(tableRequest);
