@@ -56,7 +56,7 @@ public class UserRepositoryIntegrationTest {
      * @throws Exception if the User table is already existed
      */
     @Before
-    // @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
+    @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void setup() throws Exception {
         logger = Logger.getLogger(UsersController.class.getName());
 
@@ -80,7 +80,7 @@ public class UserRepositoryIntegrationTest {
      * Reload the data back to User table after testing
      */
     @After
-    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
+    @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void reinsertExistingUsers() {
         if (existingUsers == null || existingUsers.isEmpty())
             return;
@@ -92,7 +92,7 @@ public class UserRepositoryIntegrationTest {
      * Positive test for find users by lastname
      */
     @Test
-    //@Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
+    @Ignore // Remove after you've hooked up DynamoDB Endpoint, AccessKey, SecretKey
     public void positivefindByLastname() {
         final String id = "TEST_ID";
         final String firstname = "TEST_FIRSTNAME";
