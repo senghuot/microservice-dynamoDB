@@ -15,7 +15,9 @@ In order to access your DynamoDB, you need to setup a credential thru Amazon IAM
 ![Properties](https://cdn-images-1.medium.com/max/800/1*QVnpjFeAbqDQWq3WwHg4Sg.jpeg)
 
 Awesome, you have the ingredients to build the package. Thru command line, navigate to the project folder then type:
-mvn package // to validate and compile the project
+```
+mvn package \\ to validate and compile the project
+```
 Lets run the Eureka aka Registration Server. This lets User Service to register itself in order to be discovered by the API Gateway. Then you can run User Server. *Note, you can run multiple instances of User Services, just provide different port each time. Default port is 5555. In our case, we will 2 instances.
 ```
 java -jar target/microservice-dynamoDB-0.0.1-SNAPSHOT.jar reg
