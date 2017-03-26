@@ -28,4 +28,4 @@ Finally, lets get the API Gateway up. It will server as a singleton for any inco
 ```
 java -jar target/microservice-dynamoDB-0.0.1-SNAPSHOT.jar web
 ```
-Congratulation, you’ve setup the system and ran the system. Go here to check it out: http://localhost:9999/users
+Congratulation, you’ve setup the system - now lets check it out: http://localhost:9999/users
