@@ -18,7 +18,7 @@ Awesome, you have the ingredients to build the package. Thru command line, navig
 ```
 mvn package \\ to validate and compile the project
 ```
-Lets run the Eureka aka Registration Server. This lets User Service to register itself in order to be discovered by the API Gateway. Then you can run User Server. *Note, you can run multiple instances of User Services, just provide different port each time. Default port is 5555. In our case, we will 2 instances.
+Lets run the Eureka aka Registration Server. This lets User Service to register itself in order to be discovered by the API Gateway. *Note, you can run multiple instances of User Services, just provide different port each time. Default port is 5555. In our case, we will run 2 instances.
 ```
 java -jar target/microservice-dynamoDB-0.0.1-SNAPSHOT.jar reg
 java -jar target/microservice-dynamoDB-0.0.1-SNAPSHOT.jar users 5555
