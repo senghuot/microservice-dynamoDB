@@ -12,7 +12,7 @@ You need to setup Amazon DynamoDB if you don’t have one yet. Don’t worry AWS
 
 ![Create Table](https://cdn-images-1.medium.com/max/1000/1*mB-kZTbGQqZctZBZg8uVXw.jpeg)
 
-In order to access your DynamoDB, you need to setup a credential thru Amazon IAM. Amazon has a great article guiding you thru the process. Now that you have everything setup, let’s replace the DynamoDB endpoint, access key, and secret key with the real values in users-server.yml
+In order to access your DynamoDB, you need to setup a credential thru Amazon IAM. Amazon has a great [article](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/authentication-and-access-control.html) guiding you thru the process. Now that you have everything setup, let’s replace the DynamoDB endpoint, access key, and secret key with the real values in users-server.yml
 
 ![Properties](https://cdn-images-1.medium.com/max/800/1*QVnpjFeAbqDQWq3WwHg4Sg.jpeg)
 
